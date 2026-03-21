@@ -112,9 +112,9 @@ public class CardDeliveredTest {
 
         $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
-        $("[data-test-id='date']").shouldBe(Condition.visible).click();
+        String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
-                .setValue("27032026");
+                .setValue(planningDate);
         $("[name='name']").setValue("Иван Иванов");
         $("[name='phone']").setValue("+79208882134");
 //        $("[data-test-id='agreement']").click();
