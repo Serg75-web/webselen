@@ -10,12 +10,11 @@ import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.files.DownloadActions.click;
 
 public class CardDeliveredTest {
 
-    private String generateDate(long addDays, String pattern) {
-        return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
+    private String generateDate(String pattern) {
+        return LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern(pattern));
     }
 
     @BeforeEach
@@ -28,7 +27,7 @@ public class CardDeliveredTest {
 
         $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
-        String planningDate = generateDate(4,"dd.MM.yyyy");
+        String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
                 .setValue(planningDate);
         $("[name='name']").setValue("Иван Иванов");
@@ -46,7 +45,7 @@ public class CardDeliveredTest {
 
         $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Moscow");
-        String planningDate = generateDate(4,"dd.MM.yyyy");
+        String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
                 .setValue(planningDate);
         $("[name='name']").setValue("Иван Иванов");
@@ -63,7 +62,7 @@ public class CardDeliveredTest {
 
         $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
-        String planningDate = generateDate(4,"dd.MM");
+        String planningDate = generateDate("dd.MM");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
                 .setValue(planningDate);
         $("[name='name']").setValue("Иван Иванов");
@@ -80,7 +79,7 @@ public class CardDeliveredTest {
 
         $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
-        String planningDate = generateDate(4,"dd.MM.yyyy");
+        String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
                 .setValue(planningDate);
         $("[name='name']").setValue("Ivan Ivanov");
@@ -97,7 +96,7 @@ public class CardDeliveredTest {
 
         $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
-        String planningDate = generateDate(4,"dd.MM.yyyy");
+        String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
                 .setValue(planningDate);
         $("[name='name']").setValue("Иван Иванов");
@@ -124,8 +123,8 @@ public class CardDeliveredTest {
 
         $("[data-test-id='agreement'] .checkbox__text").shouldHave(Condition.text("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
 
-//        String expectedColor = "rgba(255, 92, 92, 1)"; // преобразовали hex #ff5c5c в rgb
-//        $("[data-test-id='agreement'] .checkbox__text").shouldHave(Condition.cssValue("color", expectedColor));
+        String expectedColor = "rgba(255, 92, 92, 1)"; // преобразовали hex #ff5c5c в rgb
+        $("[data-test-id='agreement'] .checkbox__text").shouldHave(Condition.cssValue("color", expectedColor));
 
     }
 }
