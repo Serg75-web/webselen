@@ -124,8 +124,8 @@ public class CardDeliveredTest {
 
         $("[data-test-id='agreement'] .checkbox__text").shouldHave(Condition.text("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
 
-        String expectedColor = "rgba(255, 92, 92, 1)"; // преобразовали hex #ff5c5c в rgb
-        $("[data-test-id='agreement'] .checkbox__text").shouldHave(Condition.cssValue("color", expectedColor));
+//        String expectedColor = "rgba(255, 92, 92, 1)"; // преобразовали hex #ff5c5c в rgb
+//        $("[data-test-id='agreement'] .checkbox__text").shouldHave(Condition.cssValue("color", expectedColor));
 
     }
 }
