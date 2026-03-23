@@ -24,7 +24,6 @@ public class CardDeliveredTest {
     @Test
     void shouldFillValid () { //валидные данные
 
-        $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
         String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
@@ -42,7 +41,6 @@ public class CardDeliveredTest {
     @Test
     void shouldCityInvalid () { // невалидный город
 
-        $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Moscow");
         String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
@@ -59,7 +57,6 @@ public class CardDeliveredTest {
     @Test
     void shouldDateInvalid () { // невалидная дата
 
-        $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
         String planningDate = generateDate("dd.MM");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
@@ -76,7 +73,6 @@ public class CardDeliveredTest {
     @Test
     void shouldNameInvalid () { // невалидные фамилия и имя
 
-        $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
         String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
@@ -93,7 +89,6 @@ public class CardDeliveredTest {
     @Test
     void shouldPhoneInvalid () { // невалидный номер телефона
 
-        $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
         String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
@@ -110,7 +105,6 @@ public class CardDeliveredTest {
     @Test
     void shouldNotClicked () { // неотжатый чекбокс
 
-        $("[data-test-id='city']").shouldBe(Condition.visible).click();
         $("[data-test-id='city'] input").setValue("Петрозаводск");
         String planningDate = generateDate("dd.MM.yyyy");
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
